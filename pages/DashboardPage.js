@@ -5,6 +5,7 @@ export class DashboardPage{
         this.page = page;
         this.url = 'https://test.ineedtofindsomeonefor.com/';
         this.title = 'I Need To Find Someone For';
+        this.SignInButton = page.locator('//*[@id="root"]/header/div/div[2]/nav/a[2]');
         
     }
 
@@ -14,6 +15,9 @@ export class DashboardPage{
 
     async verifyPageLoading(){
         await expect(this.page).toHaveTitle(this.title);
-        
+    }
+
+    async clickOnSigninButton(){
+        await this.SignInButton.click();
     }
 }
